@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: job-service
+    env: docker
+    repo: https://github.com/asiyashaikh02/micro-mern-job
+    rootDir: job-service
+    plan: free
+    branch: main
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: PORT
+        value: 5000
+
+  - type: web
+    name: applicant-service
+    env: docker
+    repo: https://github.com/asiyashaikh02/micro-mern-job
+    rootDir: applicant-service
+    plan: free
+    branch: main
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: PORT
+        value: 5001
+
+  - type: web
+    name: nginx
+    env: docker
+    repo: https://github.com/asiyashaikh02/micro-mern-job
+    rootDir: nginx
+    plan: free
+    branch: main
